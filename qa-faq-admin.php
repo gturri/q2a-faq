@@ -17,8 +17,6 @@
 				return 'Frequently Asked Questions';
 			case 'faq_page_slug':
 				return 'FAQ';
-			case 'faq_list_type':
-				return false;
 			case 'faq_pre_html':
 				return 'The following is basic information about our forum.  Please read this before posting questions or answers if you are unfamiliar with this sort of forum.  Click on any question to show or hide the answer.';
 			case 'faq_post_html':
@@ -139,8 +137,6 @@
 				qa_opt('faq_pre_html',qa_post_text('faq_pre_html'));
 				qa_opt('faq_post_html',qa_post_text('faq_post_html'));
 				
-				qa_opt('faq_list_type',(bool)qa_post_text('faq_list_type'));
-				
 				qa_opt('faq_notify_show',(bool)qa_post_text('faq_notify_show'));
 				qa_opt('faq_notify_text',qa_post_text('faq_notify_text'));
 				
@@ -213,14 +209,6 @@
 				'note' => 'filters allowed as for sections (below)',
 			);
 
-			$fields[] = array(
-				'label' => 'Use ordered list (default is unordered)',
-				'tags' => 'NAME="faq_list_type"',
-				'value' => qa_opt('faq_list_type'),
-				'type' => 'checkbox',
-			);
-				
-			
 			$fields[] = array(
 				'label' => 'FAQ custom css',
 				'tags' => 'NAME="faq_css"',
