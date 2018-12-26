@@ -55,10 +55,13 @@
 	text-decoration: none;
 	top: 8px;
 }
+.qa-faq-section {
+	margin-bottom: 10px;
+}
 .qa-faq-section-title {
+	border: 1px solid #CCC;
 	font-size:125%;
 	font-weight:bold;
-	margin:10px 0 5px;
 	cursor:pointer;
 }
 .qa-faq-section-text {

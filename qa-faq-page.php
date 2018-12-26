@@ -53,7 +53,7 @@
 
 			$qa_content['title']=qa_opt('faq_page_title');
 
-			$qa_content['custom_0']=$this->filter_subs(qa_opt('faq_pre_html')).'<ul class="qa-faq-list">';
+			$qa_content['custom']=$this->filter_subs(qa_opt('faq_pre_html'));
 			
 			$idx = 0;
 
@@ -61,14 +61,15 @@
 				$title = $this->filter_subs(qa_opt('faq_section_'.$idx.'_title'));
 				$text = $this->filter_subs(qa_opt('faq_section_'.$idx));
 
-				$qa_content['custom_'.($idx+1).'_title']='<li class="qa-faq-list-item"><div id="custom_'.$idx.'_title" onclick="jQuery(\'#custom_'.$idx.'_text\').toggle(\'fast\')" class="qa-faq-section-title">'.$title.'</div>';
-				$qa_content['custom_'.($idx+1).'_text']='<div id="custom_'.$idx.'_text" class="qa-faq-section-text">'.$text.'</div></li>';
+				$qa_content['custom'] .= "<div class=\"qa-faq-section\">";
+				$qa_content['custom'] .= " <div class=\"qa-faq-section-title\" onclick=\"jQuery('#faq_answer_$idx').toggle('fast')\">$title ⇲</div>";
+				$qa_content['custom'] .= " <div class=\"qa-faq-section-text\" id=\"faq_answer_$idx\">$text</div>";
+				$qa_content['custom'] .= "</div>";
+
 				$idx++;
 			}
 
-			$qa_content['custom_'.(++$idx)]='</ul>';
-
-			$qa_content['custom_'.++$idx]=$this->filter_subs(qa_opt('faq_post_html'));
+			$qa_content['custom'] .= $this->filter_subs(qa_opt('faq_post_html'));
 
 			return $qa_content;
 		}
