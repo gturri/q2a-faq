@@ -98,14 +98,6 @@
 			preg_match_all('/\^qa_opt\(([^)]+)\)/',$text,$qa_opt,PREG_SET_ORDER);
 			
 			foreach($qa_opt as $match) {
-				
-				// backwards compat
-				
-				if(in_array($match[1],array('points_per_q_voted_up','points_per_q_voted_down')) && !qa_opt('points_per_q_voted_up'))
-					$match[1] = 'points_per_q_voted';
-				else if(in_array($match[1],array('points_per_a_voted_up','points_per_a_voted_down')) && !qa_opt('points_per_a_voted_up'))
-					$match[1] = 'points_per_a_voted';
-					
 				$text = str_replace($match[0],qa_opt($match[1]),$text);
 			}
 			
@@ -175,11 +167,6 @@
 						case 'points_per_a_voted_down':
 							$prefix='-';
 							break;
-						case 'points_per_q_voted':
-						case 'points_per_a_voted':
-							$prefix='&#177;';
-							break;
-							
 						case 'points_q_voted_max_gain':
 						case 'points_a_voted_max_gain':
 							$prefix='+';
