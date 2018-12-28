@@ -152,8 +152,8 @@
 				$table = '
 <table class="qa-form-wide-table">
 	<tbody>';
-				$multi = (int)$options['points_multiple'];
 				foreach ($optionnames as $optionname) {
+					$multi = (int)$options['points_multiple'];
 					
 					switch ($optionname) {
 						case 'points_multiple':
@@ -161,41 +161,29 @@
 							
 						case 'points_per_q_voted_up':
 						case 'points_per_a_voted_up':
-							$prefix='+';
+						case 'points_base':
+						case 'points_q_voted_max_gain':
+						case 'points_a_voted_max_gain':
 							break;
 						case 'points_per_q_voted_down':
 						case 'points_per_a_voted_down':
-							$prefix='-';
-							break;
-						case 'points_q_voted_max_gain':
-						case 'points_a_voted_max_gain':
-							$prefix='+';
-							break;
-						
 						case 'points_q_voted_max_loss':
 						case 'points_a_voted_max_loss':
-							$prefix='&ndash;';
+							$multi *= -1;
 							break;
-							
-						case 'points_base':
-							$prefix='+';
-							break;
-							
 						default:
-							$prefix='<SPAN STYLE="visibility:hidden;">+</SPAN>'; // for even alignment
 							break;
 					}
 					
 					$points = $optionname != 'points_base' ? (int)$options[$optionname]*$multi : (int)$options[$optionname];
 					
-					if ($points>0) {
+					if ($points != 0) {
 						$table .= '
 			<tr>
 				<td class="qa-form-wide-label">
 					'.qa_lang_html('options/'.$optionname).'
 				</td>
 				<td class="qa-form-wide-data" style="text-align:right">
-					<span class="qa-form-wide-prefix"><span style="width: 1em; display: -moz-inline-stack;">'.$prefix.'</span></span>
 					'.qa_html($points).($optionname=='points_multiple'?'':'
 					<span class="qa-form-wide-note">'.qa_lang_html('admin/points').'</span>').'
 				</td>
