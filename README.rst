@@ -23,18 +23,12 @@ Installation
 ------------
 
 #. Install Question2Answer_
-#. Get the source code for this plugin from github_, either using git_, or downloading directly:
-
-   - To download using git, install git and then type 
-     ``git clone git://github.com/NoahY/q2a-faq.git faq``
-     at the command prompt (on Linux, Windows is a bit different)
-   - To download directly, go to the `project page`_ and click **Download**
-
+#. Download_ this plugin. Extract the archive and rename the directory to **q2a-faq**
+#. Copy the downloaded q2a-faq directory in the qa-plugin directory of your q2a install
 #. Go to **Admin -> Plugins** on your q2a install and edit the FAQ to your liking; there are some custom variables that can be substituted.
 
-.. _Question2Answer: http://www.question2answer.org/install.php
-.. _git: http://git-scm.com/
-.. _github:
+.. _Question2Answer: https://www.question2answer.org/install.php
+.. _Download: https://github.com/gturri/q2a-faq/archive/master.zip
 .. _project page: https://github.com/NoahY/q2a-faq
 
 ----------
