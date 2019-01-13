@@ -63,10 +63,6 @@
 	font-size:125%;
 	font-weight:bold;
 	cursor:pointer;
-}
-.qa-faq-section-text {
-	display:none;
-	margin:0 0 10px 10px;
 }';
 			case 'faq_section_0_title':
 				return 'What kinds of questions can I ask here? ';

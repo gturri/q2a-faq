@@ -62,8 +62,10 @@
 				$text = $this->filter_subs(qa_opt('faq_section_'.$idx));
 
 				$qa_content['custom'] .= "<div class=\"qa-faq-section\">";
-				$qa_content['custom'] .= " <div class=\"qa-faq-section-title\" onclick=\"jQuery('#faq_answer_$idx').toggle('fast')\">$title ⇲</div>";
-				$qa_content['custom'] .= " <div class=\"qa-faq-section-text\" id=\"faq_answer_$idx\">$text</div>";
+				$qa_content['custom'] .= " <details>";
+				$qa_content['custom'] .= " <summary class=\"qa-faq-section-title\">$title</summary>";
+				$qa_content['custom'] .= " $text";
+				$qa_content['custom'] .= " </details>";
 				$qa_content['custom'] .= "</div>";
 
 				$idx++;
