@@ -29,7 +29,7 @@ Installation
 
 .. _Question2Answer: https://www.question2answer.org/install.php
 .. _Download: https://github.com/gturri/q2a-faq/archive/master.zip
-.. _project page: https://github.com/NoahY/q2a-faq
+.. _project page: https://github.com/gturri/q2a-faq
 
 ----------
 Disclaimer
