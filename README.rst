@@ -28,7 +28,7 @@ Installation
 #. Go to **Admin -> Plugins** on your q2a install and edit the FAQ to your liking; there are some custom variables that can be substituted.
 
 .. _Question2Answer: https://www.question2answer.org/install.php
-.. _Download: https://github.com/gturri/q2a-faq/archive/master.zip
+.. _Download: https://github.com/gturri/q2a-faq/archive/main.zip
 .. _project page: https://github.com/gturri/q2a-faq
 
 ----------
